@@ -62,7 +62,7 @@ Route::group(['middleware' => ['auth']], function () {
     //LapPosisiBarang
     Route::get('lapposisibrg', [LapPosisiBrgController::class, 'index'])->name('lapposisibrg');
     Route::get('exportexcellapposisibrg', [LapPosisiBrgController::class, 'exportExcel'])->name('exportexcellapposisibrg');
-
+    Route::get('exportpdflapposisibrg', [LapPosisiBrgController::class, 'exportPdf'])->name('exportPdf');
 
     //MutasiBarangJAdi
     Route::get('mutasibrgjadi', [MutasiBrgJadiController::class, 'index'])->name('mutasibrgjadi');
