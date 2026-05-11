@@ -17,20 +17,7 @@ class LapPosisiBrgController extends Controller
                 $datefrForm = Carbon::createFromFormat('d/m/Y', $dtfr)->format('Y-m-d');
                 $datetoForm = Carbon::createFromFormat('d/m/Y', $dtto)->format('Y-m-d');
                 $compcode = session()->get('comp_code');
-                $results =DB::table('tlapposisigb')->whereBetween('tgldaftarbc', [$datefrForm, $datetoForm])->paginate(50);
-                // dd($results);
-
-
-                // $query = DB::select('EXEC rptTest ?,?,?',[$datefrForm,$datetoForm,'BC 4.0']);
-
-                // $page = request('page', 1);
-                // $pageSize = 25;
-                // $query = DB::select('CALL rptmutasibahanbaku (?,?,?)', [$datefrForm, $datetoForm, $compcode]);
-                // $offset = ($page * $pageSize) - $pageSize;
-                // $data = array_slice($query, $offset, $pageSize, true);
-                // $results = new \Illuminate\Pagination\LengthAwarePaginator($data, count($data), $pageSize, $page);
-
-                // dd($results);
+                $results = DB::select('CALL sp_LaporanPosisiBarang(?,?)', [$datefrForm, $datetoForm]);
 
                 return view('reports.lapposisibrg', [
                     'results' => $results
@@ -43,7 +30,7 @@ class LapPosisiBrgController extends Controller
                 $datefrForm = Carbon::createFromFormat('d/m/Y', $dtfr)->format('Y-m-d');
                 $datetoForm = Carbon::createFromFormat('d/m/Y', $dtto)->format('Y-m-d');
 
-                $results = DB::table('tlapposisigb')->whereBetween('tgldaftarbc', [$datefrForm, $datetoForm])->paginate(50);
+                $results = DB::select('CALL sp_LaporanPosisiBarang(?,?)', [$datefrForm, $datetoForm]);
 
                 return view('reports.lapposisibrg', [
                     'results' => $results
@@ -62,7 +49,7 @@ class LapPosisiBrgController extends Controller
         $comp_code = session()->get('comp_code');
         $comp_name = session()->get('comp_name');
 
-        $results = DB::table('tlapposisigb')->whereBetween('tgldaftarbc', [$datefrForm, $datetoForm])->get();
+        $results = DB::select('CALL sp_LaporanPosisiBarang(?,?)', [$datefrForm, $datetoForm]);
 
         // dd($results);
 
@@ -78,7 +65,7 @@ class LapPosisiBrgController extends Controller
         $compcode = session()->get('comp_code');
         $comp_name = session()->get('comp_name');
 
-        $results = DB::table('tlapposisigb')->whereBetween('tgldaftarbc', [$datefrForm, $datetoForm])->get();
+        $results = DB::select('CALL sp_LaporanPosisiBarang(?,?)', [$datefrForm, $datetoForm]);
 
         // dd($results);
 
