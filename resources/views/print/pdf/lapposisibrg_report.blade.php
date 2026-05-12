@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 
 <head>
     <title>Mutasi Barang Jadi</title>
@@ -108,8 +108,8 @@
                                     <th scope="row" class="border-2">{{ $no }}</th>
                                     <td class="border-2">{{ $item->jenis }}</td>
                                     <td class="border-2">{{ $item->nopendaftaran }}</td>
-                                    <td class="border-2">{{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}</td>
-                                    <td class="border-2">{{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}</td>
+                                    <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
+                                    <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
                                     <td class="border-2">{{ $item->kode }}</td>
                                     <td class="border-2">{{ $item->nama }}</td>
                                     <td class="border-2">{{ $item->satuan }}</td>
@@ -117,8 +117,8 @@
                                     <td class="border-2">{{ $item->cif }}</td>
                                     <td class="border-2">{{ $item->jenis2 }}</td>
                                     <td class="border-2">{{ $item->nopendaftaranbc }}</td>
-                                    <td class="border-2">{{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
-                                    <td class="border-2">{{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
+                                    <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
+                                    <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
                                     <td class="border-2">{{ $item->kode2 }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
                                         {{ $item->nama2 }}</td>
@@ -151,9 +151,9 @@
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
                                         {{ $item->nopendaftaran }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
-                                        {{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}</td>
+                                        {{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
-                                        {{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}</td>
+                                        {{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
                                     <td class="border-2" style="width: 50px; word-wrap: break-word;">
                                         {{ $item->kode }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
@@ -169,9 +169,9 @@
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
                                         {{ $item->nopendaftaranbc }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
-                                        {{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
+                                        {{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
-                                        {{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
+                                        {{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
                                         {{ $item->kode2 }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
@@ -206,9 +206,9 @@
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
                                         {{ $item->nopendaftaran }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
-                                        {{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}</td>
+                                        {{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
-                                        {{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}</td>
+                                        {{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
                                     <td class="border-2" style="width: 50px; word-wrap: break-word;">
                                         {{ $item->kode }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
@@ -224,9 +224,9 @@
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
                                         {{ $item->nopendaftaranbc }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
-                                        {{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
+                                        {{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
-                                        {{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
+                                        {{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
                                         {{ $item->kode2 }}</td>
                                     <td class="border-2" style="width: 105px; word-wrap: break-word;">
@@ -286,3 +286,4 @@
         margin: 0px auto;
     }
 </style>
+

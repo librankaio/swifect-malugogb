@@ -1,4 +1,4 @@
-@extends('layouts.main')
+﻿@extends('layouts.main')
 @section('content')
     <!-- Form -->
     <form action="/lapposisibrg" method="get" class="container-fluid px-5 py-2" id="myform">
@@ -157,8 +157,8 @@
                                                 <th scope="row" class="border-2">{{ $no }}</th>
                                                 <td class="border-2">{{ $item->jenis }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaran }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}</td>
+                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
+                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
                                                 <td class="border-2">{{ $item->kode }}</td>
                                                 <td class="border-2">{{ $item->nama }}</td>
                                                 <td class="border-2">{{ $item->satuan }}</td>
@@ -166,8 +166,8 @@
                                                 <td class="border-2">{{ $item->cif }}</td>
                                                 <td class="border-2">{{ $item->jenis2 }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaranbc }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
+                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
+                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
                                                 <td class="border-2">{{ $item->kode2 }}</td>
                                                 <td class="border-2">{{ $item->nama2 }}</td>
                                                 <td class="border-2">{{ $item->uom }}</td>
@@ -190,9 +190,9 @@
                                                 <th scope="row" class="border-2">{{ $no }}</th>
                                                 <td class="border-2">{{ $item->jenis }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaran }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}
+                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}
                                                 </td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}
+                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}
                                                 </td>
                                                 <td class="border-2">{{ $item->kode }}</td>
                                                 <td class="border-2">{{ $item->nama }}</td>
@@ -201,8 +201,8 @@
                                                 <td class="border-2">{{ number_format($item->cif, 0, '.', '.') }}</td>
                                                 <td class="border-2">{{ $item->jenis2 }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaranbc }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
+                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
+                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
                                                 <td class="border-2">{{ $item->kode2 }}</td>
                                                 <td class="border-2">{{ $item->nama2 }}</td>
                                                 <td class="border-2">{{ $item->uom }}</td>
@@ -226,19 +226,20 @@
                                                 <th scope="row" class="border-2">{{ $no }}</th>
                                                 <td class="border-2">{{ $item->jenis }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaran }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}
+                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}
                                                 </td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tglpendaftaran)) }}
+                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}
                                                 </td>
                                                 <td class="border-2">{{ $item->kode }}</td>
                                                 <td class="border-2">{{ $item->nama }}</td>
                                                 <td class="border-2">{{ $item->satuan }}</td>
-                                                <td class="border-2">{{ number_format($jmlsaldo_old, 0, '.', '.') }}</td>
+                                                {{-- <td class="border-2">{{ number_format($jmlsaldo_old, 0, '.', '.') }}</td> --}}
+                                                <td class="border-2">{{ number_format($item->qty, 0, '.', '.') }}</td>
                                                 <td class="border-2">{{ number_format($item->cif, 0, '.', '.') }}</td>
                                                 <td class="border-2">{{ $item->jenis2 }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaranbc }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
-                                                <td class="border-2">{{ date('d/m/Y', strtotime($item->tgldaftarbc)) }}</td>
+                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
+                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
                                                 <td class="border-2">{{ $item->kode2 }}</td>
                                                 <td class="border-2">{{ $item->nama2 }}</td>
                                                 <td class="border-2">{{ $item->uom }}</td>
@@ -258,8 +259,8 @@
                         <th scope="row" class="border-2">{{ $no }}</th>
                         <td class="border-2">{{ $item->jenis }}</td>
                         <td class="border-2">{{ $item->nopendaftaran }}</td>
-                        <td class="border-2">{{ date("d/m/Y", strtotime($item->tglpendaftaran)) }}</td>
-                        <td class="border-2">{{ date("d/m/Y", strtotime($item->tglpendaftaran)) }}</td>
+                        <td class="border-2">{{ ($item->tglpendaftaran ? date("d/m/Y", strtotime($item->tglpendaftaran)) : "") }}</td>
+                        <td class="border-2">{{ ($item->tglpendaftaran ? date("d/m/Y", strtotime($item->tglpendaftaran)) : "") }}</td>
                         <td class="border-2">{{ $item->kode }}</td>
                         <td class="border-2">{{ $item->nama }}</td>
                         <td class="border-2">{{ $item->satuan }}</td>
@@ -267,8 +268,8 @@
                         <td class="border-2">{{ number_format($item->cif, 2, '.', '.')}}</td>
                         <td class="border-2">{{ $item->jenis2 }}</td>
                         <td class="border-2">{{ $item->nopendaftaranbc }}</td>
-                        <td class="border-2">{{ date("d/m/Y", strtotime($item->tgldaftarbc)) }}</td>
-                        <td class="border-2">{{ date("d/m/Y", strtotime($item->tgldaftarbc)) }}</td>
+                        <td class="border-2">{{ ($item->tgldaftarbc ? date("d/m/Y", strtotime($item->tgldaftarbc)) : "") }}</td>
+                        <td class="border-2">{{ ($item->tgldaftarbc ? date("d/m/Y", strtotime($item->tgldaftarbc)) : "") }}</td>
                         <td class="border-2">{{ $item->kode2 }}</td>
                         <td class="border-2">{{ $item->nama2 }}</td>
                         <td class="border-2">{{ $item->uom }}</td>
@@ -318,3 +319,4 @@
         });
     </script>
 @endsection
+
