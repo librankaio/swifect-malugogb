@@ -98,7 +98,8 @@
                     </div>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-striped table-hover" style="padding-right: 1rem;" id="datatable">
+                    <table class="table table-striped table-hover table-sm"
+                        style="padding-right: 1rem; font-size: 0.7rem; white-space: nowrap;" id="datatable">
 
                         <thead>
                             <tr align="center" class="" style="font-weight: bold;">
@@ -157,17 +158,25 @@
                                                 <th scope="row" class="border-2">{{ $no }}</th>
                                                 <td class="border-2">{{ $item->jenis }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaran }}</td>
-                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
-                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}</td>
+                                                <td class="border-2">
+                                                    {{ $item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '' }}
+                                                </td>
+                                                <td class="border-2">
+                                                    {{ $item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '' }}
+                                                </td>
                                                 <td class="border-2">{{ $item->kode }}</td>
                                                 <td class="border-2">{{ $item->nama }}</td>
                                                 <td class="border-2">{{ $item->satuan }}</td>
                                                 <td class="border-2">{{ number_format($item->qty, 0, '.', '.') }}</td>
-                                                <td class="border-2">{{ $item->cif }}</td>
+                                                <td class="border-2">{{ number_format($item->cif, 0, '.', ',') }}</td>
                                                 <td class="border-2">{{ $item->jenis2 }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaranbc }}</td>
-                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
-                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
+                                                <td class="border-2">
+                                                    {{ $item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '' }}
+                                                </td>
+                                                <td class="border-2">
+                                                    {{ $item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '' }}
+                                                </td>
                                                 <td class="border-2">{{ $item->kode2 }}</td>
                                                 <td class="border-2">{{ $item->nama2 }}</td>
                                                 <td class="border-2">{{ $item->uom }}</td>
@@ -175,7 +184,7 @@
                                                 <td class="border-2">{{ number_format($item->cif2, 0, '.', '.') }}</td>
                                                 <td class="border-2">{{ number_format($item->Saldo_Jmlh, 0, '.', '.') }}</td>
                                                 <td class="border-2">{{ $item->Saldo_Sat }}</td>
-                                                <td class="border-2">{{ number_format($item->Saldo_Nil_Pabean, 0, '.', '.') }}
+                                                <td class="border-2">{{ number_format($item->Saldo_Nil_Pabean, 0, '.', ',') }}
                                                 </td>
                                                 @php
                                                     $groupkey = $item->nopendaftaran;
@@ -190,27 +199,33 @@
                                                 <th scope="row" class="border-2">{{ $no }}</th>
                                                 <td class="border-2">{{ $item->jenis }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaran }}</td>
-                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}
+                                                <td class="border-2">
+                                                    {{ $item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '' }}
                                                 </td>
-                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}
+                                                <td class="border-2">
+                                                    {{ $item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '' }}
                                                 </td>
                                                 <td class="border-2">{{ $item->kode }}</td>
                                                 <td class="border-2">{{ $item->nama }}</td>
                                                 <td class="border-2">{{ $item->satuan }}</td>
                                                 <td class="border-2">{{ number_format($item->qty, 0, '.', '.') }}</td>
-                                                <td class="border-2">{{ number_format($item->cif, 0, '.', '.') }}</td>
+                                                <td class="border-2">{{ number_format($item->cif, 0, '.', ',') }}</td>
                                                 <td class="border-2">{{ $item->jenis2 }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaranbc }}</td>
-                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
-                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
+                                                <td class="border-2">
+                                                    {{ $item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '' }}
+                                                </td>
+                                                <td class="border-2">
+                                                    {{ $item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '' }}
+                                                </td>
                                                 <td class="border-2">{{ $item->kode2 }}</td>
                                                 <td class="border-2">{{ $item->nama2 }}</td>
                                                 <td class="border-2">{{ $item->uom }}</td>
                                                 <td class="border-2">{{ number_format($item->qty2, 0, '.', '.') }}</td>
-                                                <td class="border-2">{{ number_format($item->cif2, 0, '.', '.') }}</td>
+                                                <td class="border-2">{{ number_format($item->cif2, 0, '.', ',') }}</td>
                                                 <td class="border-2">{{ number_format($item->Saldo_Jmlh, 0, '.', '.') }}</td>
                                                 <td class="border-2">{{ $item->Saldo_Sat }}</td>
-                                                <td class="border-2">{{ number_format($item->Saldo_Nil_Pabean, 0, '.', '.') }}
+                                                <td class="border-2">{{ number_format($item->Saldo_Nil_Pabean, 0, '.', ',') }}
                                                 </td>
                                                 <!--<td class="border-2">{{ $groupkey }}</td>-->
                                                 @php
@@ -226,28 +241,34 @@
                                                 <th scope="row" class="border-2">{{ $no }}</th>
                                                 <td class="border-2">{{ $item->jenis }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaran }}</td>
-                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}
+                                                <td class="border-2">
+                                                    {{ $item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '' }}
                                                 </td>
-                                                <td class="border-2">{{ ($item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '') }}
+                                                <td class="border-2">
+                                                    {{ $item->tglpendaftaran ? date('d/m/Y', strtotime($item->tglpendaftaran)) : '' }}
                                                 </td>
                                                 <td class="border-2">{{ $item->kode }}</td>
                                                 <td class="border-2">{{ $item->nama }}</td>
                                                 <td class="border-2">{{ $item->satuan }}</td>
                                                 {{-- <td class="border-2">{{ number_format($jmlsaldo_old, 0, '.', '.') }}</td> --}}
                                                 <td class="border-2">{{ number_format($item->qty, 0, '.', '.') }}</td>
-                                                <td class="border-2">{{ number_format($item->cif, 0, '.', '.') }}</td>
+                                                <td class="border-2">{{ number_format($item->cif, 0, '.', ',') }}</td>
                                                 <td class="border-2">{{ $item->jenis2 }}</td>
                                                 <td class="border-2">{{ $item->nopendaftaranbc }}</td>
-                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
-                                                <td class="border-2">{{ ($item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '') }}</td>
+                                                <td class="border-2">
+                                                    {{ $item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '' }}
+                                                </td>
+                                                <td class="border-2">
+                                                    {{ $item->tgldaftarbc ? date('d/m/Y', strtotime($item->tgldaftarbc)) : '' }}
+                                                </td>
                                                 <td class="border-2">{{ $item->kode2 }}</td>
                                                 <td class="border-2">{{ $item->nama2 }}</td>
                                                 <td class="border-2">{{ $item->uom }}</td>
                                                 <td class="border-2">{{ number_format($item->qty2, 0, '.', '.') }}</td>
-                                                <td class="border-2">{{ number_format($item->cif2, 0, '.', '.') }}</td>
+                                                <td class="border-2">{{ number_format($item->cif2, 0, '.', ',') }}</td>
                                                 <td class="border-2">{{ number_format($item->Saldo_Jmlh, 0, '.', '.') }}</td>
                                                 <td class="border-2">{{ $item->Saldo_Sat }}</td>
-                                                <td class="border-2">{{ number_format($item->Saldo_Nil_Pabean, 0, '.', '.') }}
+                                                <td class="border-2">{{ number_format($item->Saldo_Nil_Pabean, 0, '.', ',') }}
                                                 </td>
                                                 <!--<td class="border-2">{{ $groupkey }}</td>-->
                                                 @php
@@ -319,4 +340,3 @@
         });
     </script>
 @endsection
-
