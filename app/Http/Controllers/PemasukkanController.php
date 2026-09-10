@@ -33,7 +33,7 @@ class PemasukkanController extends Controller
                     // $data = array_slice($query, $offset, $pageSize, true);
                     // $results = new \Illuminate\Pagination\LengthAwarePaginator($data, count($data), $pageSize, $page);
 
-                    $results = DB::table('vwLapPemasukanPerDokumen')->whereBetween('dptanggal', [$datefrForm, $datetoForm])->where('jenis_dokumen', '=', $jenisdok)->orderBy('dptanggal','desc')->orderBy('dpnomor','desc')->get();
+                    $results = DB::table('vwLapPemasukanPerDokumenONLINE ')->whereBetween('dptanggal', [$datefrForm, $datetoForm])->where('jenis_dokumen', '=', $jenisdok)->orderBy('dptanggal','desc')->orderBy('dpnomor','desc')->get();
 
                     return view('reports.pemasukkan', [
                         'results' => $results
