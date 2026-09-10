@@ -17,7 +17,7 @@ class LapPosisiBrgController extends Controller
                 $datefrForm = Carbon::createFromFormat('d/m/Y', $dtfr)->format('Y-m-d');
                 $datetoForm = Carbon::createFromFormat('d/m/Y', $dtto)->format('Y-m-d');
                 $compcode = session()->get('comp_code');
-                $results = DB::select('EXEC sp_LaporanPosisiBarang(?,?)', [$datefrForm, $datetoForm]);
+                $results = DB::select('EXEC sp_LaporanPosisiBarang ?,?', [$datefrForm, $datetoForm]);
 
                 return view('reports.lapposisibrg', [
                     'results' => $results
@@ -30,7 +30,7 @@ class LapPosisiBrgController extends Controller
                 $datefrForm = Carbon::createFromFormat('d/m/Y', $dtfr)->format('Y-m-d');
                 $datetoForm = Carbon::createFromFormat('d/m/Y', $dtto)->format('Y-m-d');
 
-                $results = DB::select('EXEC sp_LaporanPosisiBarang(?,?)', [$datefrForm, $datetoForm]);
+                $results = DB::select('EXEC sp_LaporanPosisiBarang ?,?', [$datefrForm, $datetoForm]);
 
                 return view('reports.lapposisibrg', [
                     'results' => $results
@@ -49,7 +49,7 @@ class LapPosisiBrgController extends Controller
         $comp_code = session()->get('comp_code');
         $comp_name = session()->get('comp_name');
 
-        $results = DB::select('EXEC sp_LaporanPosisiBarang(?,?)', [$datefrForm, $datetoForm]);
+        $results = DB::select('EXEC sp_LaporanPosisiBarang ?,?', [$datefrForm, $datetoForm]);
 
         // dd($results);
 
